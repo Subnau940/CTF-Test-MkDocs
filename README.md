@@ -59,3 +59,4 @@ Les writeups sont classés par catégorie, chaque challenge ayant son propre dos
 | Crack the Gate 1 | Falsification d'en-tête HTTP | [PDF](<./Web exploitation/Crack the Gate 1/writeup-backdoor-header.pdf>) |
 | Old Sessions | Détournement de session | [PDF](<./Web exploitation/Old Sessions/writeup-session-hijacking.pdf>) |
 | SQL / SQLiLite | Injection SQL | [PDF](<./Web exploitation/SQL/SQLiLite/writeup-injection-sql.pdf>) |
+
