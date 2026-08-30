@@ -62,6 +62,4 @@ Les writeups sont classés par catégorie, chaque challenge ayant son propre dos
 
 ---
 
-## 📄 Ressources
 
-- [picoctf-cheatsheet.pdf](./picoctf-cheatsheet.pdf) — aide-mémoire des commandes/outils utiles pour picoCTF.
