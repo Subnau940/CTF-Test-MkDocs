@@ -6,7 +6,9 @@ Base de connaissances de mes résolutions de challenges CTF (picoCTF principalem
 
 ## 📖 Le site
 
-➡️ **[Voir le site en ligne](https://subnau940.github.io/CTF-Test-MkDocs/)** *(activer GitHub Pages sur ce repo — voir plus bas)*
+➡️ **[Voir le site en ligne](https://subnau940.github.io/CTF-Test-MkDocs/)**
+
+> ⚠️ L'URL est sensible à la casse sur le nom du repo : `CTF-Test-MkDocs`, pas `ctf-test-mkdocs`.
 
 Le site propose aussi un **téléchargement PDF de l'ensemble du site**, régénéré automatiquement à chaque déploiement (donc toujours synchronisé avec la dernière version des writeups) — bouton en haut de la page d'accueil.
 
