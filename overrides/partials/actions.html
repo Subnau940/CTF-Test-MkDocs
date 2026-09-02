@@ -1,0 +1,28 @@
+{#-
+  Overrides Material's default "Edit this page" action.
+
+  Nobody but the repo owner has push access, so clicking this never edits
+  anything directly: GitHub forks the repo and opens a Pull Request that
+  has to be reviewed and merged by hand. The label/icon reflect that —
+  "suggest an improvement", not "edit" — instead of the default wording,
+  which reads as if visitors could change the site themselves.
+-#}
+{% if page.edit_url %}
+  {% if "content.action.edit" in features %}
+    <a href="{{ page.edit_url }}" title="Suggérer une amélioration (ouvre une Pull Request GitHub)" class="md-content__button md-icon">
+      {% set icon = config.theme.icon.edit or "material/source-pull" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </a>
+  {% endif %}
+  {% if "content.action.view" in features %}
+    {% if "/blob/" in page.edit_url %}
+      {% set part = "blob" %}
+    {% else %}
+      {% set part = "edit" %}
+    {% endif %}
+    <a href="{{ page.edit_url | replace(part, 'raw') }}" title="{{ lang.t('action.view') }}" class="md-content__button md-icon">
+      {% set icon = config.theme.icon.view or "material/file-eye-outline" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </a>
+  {% endif %}
+{% endif %}

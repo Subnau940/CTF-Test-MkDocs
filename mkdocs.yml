@@ -8,10 +8,12 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: fr
+  custom_dir: overrides
   favicon: assets/favicon.svg
   icon:
     logo: fontawesome/solid/terminal
     repo: fontawesome/brands/github
+    edit: material/source-pull
   palette:
     - scheme: slate
       primary: black
