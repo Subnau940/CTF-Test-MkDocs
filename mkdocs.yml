@@ -42,6 +42,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/pdf-button.js
+  - javascripts/contribute-target.js
 
 markdown_extensions:
   - admonition

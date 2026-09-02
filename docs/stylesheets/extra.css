@@ -335,6 +335,58 @@ body {
 }
 
 /* ---------------------------------------------------------------------
+   Contribute page — "you came from X" target box (contribute-target.js)
+   --------------------------------------------------------------------- */
+
+.md-typeset .contribute-target {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8em;
+  margin: 1.2em 0 1.6em;
+  padding: 0.9em 1.1em;
+  border: 1px solid var(--ctf-border);
+  border-left: 3px solid var(--ctf-green);
+  background-color: var(--ctf-panel);
+}
+
+.md-typeset .contribute-target__label {
+  margin: 0;
+  color: var(--ctf-text-dim);
+  font-size: 0.85rem;
+}
+
+.md-typeset .contribute-target__label code {
+  color: var(--ctf-green);
+}
+
+.contribute-target__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.55em 1.1em;
+  background-color: var(--ctf-green);
+  color: #04070b;
+  border: 1px solid var(--ctf-green);
+  border-radius: 2px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none !important;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.contribute-target__btn:hover {
+  box-shadow: 0 0 20px rgba(57, 255, 106, 0.5);
+  transform: translateY(-1px);
+  color: #04070b !important;
+}
+
+/* ---------------------------------------------------------------------
    Per-page "Télécharger en PDF" button
    --------------------------------------------------------------------- */
 

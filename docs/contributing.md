@@ -2,15 +2,43 @@
 title: Contribuer
 ---
 
-# ✍️ Ajouter un writeup
+# ✍️ Contribuer
 
-Le but de ce site est d'être **modifiable en quelques minutes** : pas de PDF à recomposer, pas d'export manuel. Un writeup = un fichier Markdown.
+Ce site est ouvert à la suggestion : que tu sois passé par un writeup et que tu aies repéré un truc à améliorer, ou que tu veuilles proposer un tout nouveau writeup, tout se fait via GitHub — jamais directement sur le site.
 
-## 1. Créer le fichier
+## Pourquoi suggérer une modif ?
+
+Quelques exemples de contributions utiles sur un writeup existant :
+
+- **Un outil a évolué** — nouvelle version, interface changée, commande dépréciée ou remplacée.
+- **Une autre façon d'obtenir le flag** — une méthode alternative, plus rapide ou plus propre que celle décrite.
+- **Une anecdote ou un piège** rencontré en refaisant le challenge, qui manque dans le writeup actuel.
+- **Une erreur ou une imprécision** à corriger.
+- **Une ressource plus à jour** — un lien mort, un meilleur article de référence, etc.
+
+## Améliorer un writeup existant
+
+<div id="contribute-target-slot"></div>
+
+Si tu es arrivé ici en cliquant sur *« Suggérer une amélioration »* depuis un writeup, un bouton vers le fichier exact de ce writeup apparaît juste au-dessus de ce paragraphe.
+
+Sinon, trouve directement le fichier dans [`docs/`](https://github.com/Subnau940/CTF-Test-MkDocs/tree/main/docs) sur GitHub (un dossier par catégorie, un fichier `.md` par challenge).
+
+Une fois sur le fichier GitHub :
+
+1. Clique sur l'icône crayon (**Edit this file**) en haut à droite du fichier.
+2. Modifie le contenu — GitHub bascule automatiquement en édition sur ta propre copie (un *fork*) si tu n'as pas les droits d'écriture sur ce repo.
+3. En bas de page, clique **Propose changes** puis **Create pull request**.
+
+Ta proposition arrive dans une Pull Request que je relis et fusionne moi-même — rien n'est jamais appliqué directement sur le site.
+
+## Ajouter un nouveau writeup
+
+### 1. Créer le fichier
 
 Dans le dossier de la catégorie concernée (`docs/cryptography/`, `docs/forensic/`, `docs/general-skills/`, `docs/reverse-engineering/`, `docs/web-exploitation/`), crée un fichier `mon-challenge.md` (nom en minuscules, tirets, sans accents).
 
-## 2. Copier ce squelette
+### 2. Copier ce squelette
 
 ````markdown
 ---
@@ -58,7 +86,7 @@ commande-utilisée --avec des options
 Comment cette faille se manifeste en dehors d'un CTF, et comment s'en protéger.
 ````
 
-## 3. Ajouter la page à la navigation
+### 3. Ajouter la page à la navigation
 
 Ouvre `mkdocs.yml` à la racine du repo, et ajoute une ligne dans la section `nav:` sous la bonne catégorie :
 
@@ -68,7 +96,7 @@ Ouvre `mkdocs.yml` à la racine du repo, et ajoute une ligne dans la section `na
       - Mon challenge: cryptography/mon-challenge.md   # <- nouvelle ligne
 ```
 
-## 4. Prévisualiser en local (optionnel mais conseillé)
+### 4. Prévisualiser en local (optionnel mais conseillé)
 
 ```bash
 pip install -r requirements.txt
@@ -77,7 +105,7 @@ mkdocs serve
 
 Le site est servi sur `http://127.0.0.1:8000` avec rechargement automatique à chaque sauvegarde.
 
-## 5. Push
+### 5. Push
 
 ```bash
 git add docs/ mkdocs.yml

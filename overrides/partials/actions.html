@@ -3,13 +3,15 @@
 
   Nobody but the repo owner has push access, so clicking this never edits
   anything directly: GitHub forks the repo and opens a Pull Request that
-  has to be reviewed and merged by hand. The label/icon reflect that —
-  "suggest an improvement", not "edit" — instead of the default wording,
-  which reads as if visitors could change the site themselves.
+  has to be reviewed and merged by hand. Instead of linking straight to
+  GitHub, it routes through the Contribuer page first (passing this page's
+  edit_url as a query param) so visitors read why/how to contribute before
+  landing on the actual file — contribute-target.js reads that param back
+  out and shows the direct GitHub link there.
 -#}
 {% if page.edit_url %}
   {% if "content.action.edit" in features %}
-    <a href="{{ page.edit_url }}" title="Suggérer une amélioration (ouvre une Pull Request GitHub)" class="md-content__button md-icon">
+    <a href="{{ base_url }}/contributing/?edit_url={{ page.edit_url | urlencode }}" title="Suggérer une amélioration" class="md-content__button md-icon">
       {% set icon = config.theme.icon.edit or "material/source-pull" %}
       {% include ".icons/" ~ icon ~ ".svg" %}
     </a>
