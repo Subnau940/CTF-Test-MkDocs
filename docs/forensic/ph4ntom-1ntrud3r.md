@@ -4,7 +4,8 @@ title: "Ph4nt0m 1ntrud3r"
 
 # 🕵️ Ph4nt0m 1ntrud3r (données cachées dans un PCAP)
 
-**Plateforme :** picoCTF · **Catégorie :** Forensics · **Difficulté :** Easy
+**Plateforme :** picoCTF · **Catégorie :** Forensics · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{1t_w4snt_th4t_34sy_tbh_...}`

@@ -4,7 +4,8 @@ title: "VaultDoorTraining"
 
 # ⚙️ VaultDoorTraining (mot de passe en clair dans le code)
 
-**Plateforme :** picoCTF · **Catégorie :** Reverse Engineering · **Difficulté :** Intro
+**Plateforme :** picoCTF · **Catégorie :** Reverse Engineering · **Difficulté :** *Intro*{: .badge-intro}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{w4rm1ng_Up_w1tH_jAv4_0009yrGMeEp}`

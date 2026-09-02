@@ -4,7 +4,8 @@ title: "Flag Hunters"
 
 # ⚙️ Flag Hunters
 
-**Plateforme :** picoCTF · **Catégorie :** Reverse Engineering / Misc · **Difficulté :** Facile - Intermédiaire
+**Plateforme :** picoCTF · **Catégorie :** Reverse Engineering / Misc · **Difficulté :** *Easy-Medium*{: .badge-medium}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{70637h3r_f0r3v3r_a5202532}`

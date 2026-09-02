@@ -1,24 +1,500 @@
-.md-typeset table:not([class]) {
-  font-size: 0.75rem;
+/* =====================================================================
+   CTF Writeups — thème "hacker terminal" (cyan / magenta sur fond noir)
+   ===================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Chakra+Petch:wght@600;700&display=swap");
+
+:root,
+[data-md-color-scheme="slate"] {
+  --ctf-bg: #070b12;
+  --ctf-bg-alt: #0a111a;
+  --ctf-panel: #0d1621;
+  --ctf-cyan: #22e1ff;
+  --ctf-cyan-dim: #0f6d82;
+  --ctf-magenta: #ff2f92;
+  --ctf-text: #d7e2ea;
+  --ctf-text-dim: #7d95a3;
+  --ctf-green: #39ff6a;
+  --ctf-yellow: #ffd23f;
+  --ctf-red: #ff4d6d;
+  --ctf-border: rgba(34, 225, 255, 0.32);
+
+  --md-default-bg-color: var(--ctf-bg);
+  --md-default-fg-color: var(--ctf-text);
+  --md-default-fg-color--light: var(--ctf-text-dim);
+  --md-default-fg-color--lighter: #4a5c68;
+  --md-default-fg-color--lightest: #263340;
+
+  --md-primary-fg-color: #060a10;
+  --md-primary-bg-color: var(--ctf-cyan);
+  --md-primary-fg-color--light: #060a10;
+  --md-primary-fg-color--dark: #060a10;
+
+  --md-accent-fg-color: var(--ctf-magenta);
+  --md-accent-fg-color--transparent: rgba(255, 47, 146, 0.15);
+  --md-accent-bg-color: #0a0e14;
+
+  --md-typeset-color: var(--ctf-text);
+  --md-typeset-a-color: var(--ctf-cyan);
+
+  --md-code-bg-color: var(--ctf-panel);
+  --md-code-fg-color: #c3e8ff;
+
+  --md-footer-bg-color: #04070b;
+  --md-footer-bg-color--dark: #030508;
+  --md-footer-fg-color: var(--ctf-text);
+  --md-footer-fg-color--light: var(--ctf-text-dim);
+
+  --md-admonition-bg-color: var(--ctf-panel);
 }
 
-.md-typeset .admonition.flag,
-.md-typeset details.flag {
-  border-color: #4527a0;
+/* ---------------------------------------------------------------------
+   Base / background
+   --------------------------------------------------------------------- */
+
+body {
+  background-color: var(--ctf-bg);
+  background-image:
+    linear-gradient(rgba(34, 225, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 225, 255, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+  background-attachment: fixed;
 }
 
-.md-typeset .flag > .admonition-title,
-.md-typeset .flag > summary {
-  background-color: rgba(69, 39, 160, 0.1);
+.md-typeset,
+.md-nav,
+.md-header,
+.md-tabs,
+.md-footer {
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
 }
 
-.md-typeset .flag > .admonition-title::before,
-.md-typeset .flag > summary::before {
-  background-color: #4527a0;
-  -webkit-mask-image: var(--md-admonition-icon--success);
-  mask-image: var(--md-admonition-icon--success);
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-header__title,
+.md-nav__title,
+.md-tabs__link {
+  font-family: "Chakra Petch", "JetBrains Mono", monospace;
+  text-transform: none;
+}
+
+/* ---------------------------------------------------------------------
+   Headings
+   --------------------------------------------------------------------- */
+
+.md-typeset h1 {
+  font-weight: 700;
+  color: #eafcff;
+  text-shadow: 0 0 18px rgba(34, 225, 255, 0.45);
+  border-bottom: 2px solid var(--ctf-border);
+  padding-bottom: 0.4em;
+  letter-spacing: 0.02em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  color: var(--ctf-cyan);
+  margin-top: 2em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid rgba(34, 225, 255, 0.18);
+}
+
+.md-typeset h2::before {
+  content: "❯ ";
+  color: var(--ctf-magenta);
+  text-shadow: 0 0 10px rgba(255, 47, 146, 0.6);
+}
+
+.md-typeset h3 {
+  color: #9fe9ff;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------
+   Links
+   --------------------------------------------------------------------- */
+
+.md-typeset a {
+  text-decoration-color: rgba(34, 225, 255, 0.4);
+}
+
+.md-typeset a:hover {
+  color: var(--ctf-magenta);
+  text-decoration-color: var(--ctf-magenta);
+}
+
+/* ---------------------------------------------------------------------
+   Header / tabs
+   --------------------------------------------------------------------- */
+
+.md-header {
+  background: linear-gradient(180deg, #060a10 0%, #04070b 100%);
+  border-bottom: 1px solid var(--ctf-border);
+  box-shadow: 0 1px 24px rgba(34, 225, 255, 0.08);
+}
+
+.md-header__title,
+.md-header__topic {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.md-tabs {
+  background: #04070b;
+  border-bottom: 1px solid var(--ctf-border);
+}
+
+.md-tabs__link {
+  opacity: 0.75;
+  font-weight: 600;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
+  color: var(--ctf-cyan);
+}
+
+/* ---------------------------------------------------------------------
+   Left navigation
+   --------------------------------------------------------------------- */
+
+.md-nav__item .md-nav__link--active {
+  color: var(--ctf-magenta);
+  font-weight: 700;
+}
+
+.md-nav__link:focus,
+.md-nav__link:hover {
+  color: var(--ctf-cyan);
+}
+
+/* ---------------------------------------------------------------------
+   Right sidebar (table of contents) — terminal checklist look
+   --------------------------------------------------------------------- */
+
+.md-sidebar--secondary .md-nav__title {
+  color: var(--ctf-cyan);
+  font-weight: 700;
+}
+
+.md-sidebar--secondary .md-nav__title::before {
+  content: "☰ ";
+}
+
+.md-sidebar--secondary .md-nav__link {
+  color: var(--ctf-text-dim);
+}
+
+.md-sidebar--secondary .md-nav__link::before {
+  content: "[ ] ";
+  color: var(--ctf-cyan-dim);
+  white-space: pre;
+}
+
+.md-sidebar--secondary .md-nav__link--active,
+.md-sidebar--secondary .md-nav__link[data-md-state="blur"]:hover {
+  color: var(--ctf-magenta);
+}
+
+.md-sidebar--secondary .md-nav__link--active::before {
+  content: "[x] ";
+  color: var(--ctf-magenta);
+}
+
+/* ---------------------------------------------------------------------
+   Code blocks — terminal chrome
+   --------------------------------------------------------------------- */
+
+.md-typeset .highlight,
+.md-typeset pre {
+  background-color: var(--ctf-panel) !important;
+}
+
+.md-typeset .highlight {
+  border: 1px solid var(--ctf-border);
+  border-left: 3px solid var(--ctf-cyan);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(34, 225, 255, 0.06);
 }
 
 .md-typeset code {
-  word-break: break-word;
+  background-color: rgba(34, 225, 255, 0.08);
+  color: #c3e8ff;
+}
+
+.md-typeset pre code {
+  background-color: transparent;
+}
+
+.md-clipboard {
+  color: var(--ctf-cyan-dim);
+}
+
+.md-clipboard:hover {
+  color: var(--ctf-cyan);
+}
+
+/* ---------------------------------------------------------------------
+   Admonitions
+   --------------------------------------------------------------------- */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 2px;
+  border-width: 1px;
+  background-color: var(--ctf-panel);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-weight: 700;
+}
+
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  border-color: var(--ctf-green);
+}
+
+.md-typeset .success > .admonition-title,
+.md-typeset .success > summary {
+  background-color: rgba(57, 255, 106, 0.1);
+}
+
+/* ---------------------------------------------------------------------
+   Tables
+   --------------------------------------------------------------------- */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--ctf-border);
+  font-size: 0.75rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: rgba(34, 225, 255, 0.1);
+  color: var(--ctf-cyan);
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: rgba(34, 225, 255, 0.05);
+}
+
+/* ---------------------------------------------------------------------
+   Difficulty badges (attached via attr_list, e.g. *Easy*{: .badge-easy})
+   --------------------------------------------------------------------- */
+
+.md-typeset .badge-intro,
+.md-typeset .badge-easy,
+.md-typeset .badge-medium,
+.md-typeset .badge-hard {
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.md-typeset .badge-intro {
+  color: var(--ctf-cyan);
+  text-shadow: 0 0 8px rgba(34, 225, 255, 0.5);
+}
+
+.md-typeset .badge-easy {
+  color: var(--ctf-green);
+  text-shadow: 0 0 8px rgba(57, 255, 106, 0.5);
+}
+
+.md-typeset .badge-medium {
+  color: var(--ctf-yellow);
+  text-shadow: 0 0 8px rgba(255, 210, 63, 0.5);
+}
+
+.md-typeset .badge-hard {
+  color: var(--ctf-red);
+  text-shadow: 0 0 8px rgba(255, 77, 109, 0.5);
+}
+
+/* ---------------------------------------------------------------------
+   Challenge metadata bar (Plateforme / Catégorie / Difficulté)
+   --------------------------------------------------------------------- */
+
+.md-typeset p.ctf-meta {
+  display: block;
+  padding: 0.6em 1em;
+  margin: 0.5em 0 1.5em;
+  border: 1px solid var(--ctf-border);
+  border-left: 3px solid var(--ctf-magenta);
+  background-color: var(--ctf-panel);
+  font-size: 0.85rem;
+}
+
+.md-typeset p.ctf-meta strong {
+  color: var(--ctf-text-dim);
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 0.04em;
+}
+
+/* ---------------------------------------------------------------------
+   Per-page "Télécharger en PDF" button
+   --------------------------------------------------------------------- */
+
+.pdf-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 0 1.4em;
+  padding: 0.55em 1.1em;
+  background-color: transparent;
+  color: var(--ctf-cyan);
+  border: 1px solid var(--ctf-cyan);
+  border-radius: 2px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pdf-download-btn:hover {
+  background-color: var(--ctf-cyan);
+  color: #04070b;
+  box-shadow: 0 0 18px rgba(34, 225, 255, 0.5);
+}
+
+.pdf-download-btn__icon {
+  font-size: 1em;
+}
+
+/* ---------------------------------------------------------------------
+   Home page buttons
+   --------------------------------------------------------------------- */
+
+.md-typeset .md-button {
+  border-radius: 2px;
+  font-weight: 700;
+  border-color: var(--ctf-cyan);
+  color: var(--ctf-cyan);
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--ctf-cyan);
+  border-color: var(--ctf-cyan);
+  color: #04070b;
+}
+
+.md-typeset .md-button:hover {
+  box-shadow: 0 0 18px rgba(34, 225, 255, 0.5);
+}
+
+/* ---------------------------------------------------------------------
+   Footer
+   --------------------------------------------------------------------- */
+
+.md-footer-meta {
+  border-top: 1px solid var(--ctf-border);
+}
+
+/* =====================================================================
+   Print — the actual PDF output. Force a clean, printable, ink-friendly
+   document regardless of the neon dark theme used on screen.
+   ===================================================================== */
+
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer,
+  .md-typeset .headerlink,
+  .pdf-download-btn,
+  .md-content__button,
+  .md-source-file,
+  .md-typeset .admonition-title::after,
+  .md-clipboard {
+    display: none !important;
+  }
+
+  body,
+  .md-typeset {
+    background: #ffffff !important;
+    color: #111111 !important;
+    background-image: none !important;
+  }
+
+  .md-main__inner {
+    margin: 0 !important;
+  }
+
+  .md-content {
+    max-width: 100% !important;
+  }
+
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3 {
+    color: #0a1a2a !important;
+    text-shadow: none !important;
+  }
+
+  .md-typeset h2::before {
+    color: #555555 !important;
+    text-shadow: none !important;
+  }
+
+  .md-typeset a {
+    color: #0a58a0 !important;
+  }
+
+  .md-typeset .highlight,
+  .md-typeset pre,
+  .md-typeset code {
+    background-color: #f4f4f4 !important;
+    color: #111111 !important;
+    border-color: #cccccc !important;
+    box-shadow: none !important;
+  }
+
+  .md-typeset .admonition,
+  .md-typeset details {
+    background-color: #f7f7f7 !important;
+    border-color: #999999 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  .md-typeset p.ctf-meta {
+    background-color: #f7f7f7 !important;
+    border-color: #999999 !important;
+  }
+
+  .md-typeset table:not([class]) {
+    border-color: #999999 !important;
+  }
+
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td,
+  .md-typeset table:not([class]) tr {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+    border-color: #cccccc !important;
+  }
+
+  .md-typeset table:not([class]) th {
+    background-color: #eeeeee !important;
+  }
+
+  .md-typeset .admonition-title,
+  .md-typeset summary,
+  .md-typeset .admonition-title *,
+  .md-typeset summary * {
+    color: #111111 !important;
+  }
+
+  .badge-intro,
+  .badge-easy,
+  .badge-medium,
+  .badge-hard {
+    text-shadow: none !important;
+  }
 }

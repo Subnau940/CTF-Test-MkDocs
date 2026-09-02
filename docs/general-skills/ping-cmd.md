@@ -6,7 +6,8 @@ title: "ping-cmd"
 
 Exploitation d'injection de commande système (OS Command Injection)
 
-**Plateforme :** picoCTF 2026 · **Catégorie :** General Skills / Web · **Difficulté / Auteur :** Easy / Yahaya Meddy
+**Plateforme :** picoCTF 2026 · **Catégorie :** General Skills / Web · **Difficulté :** *Easy*{: .badge-easy} · **Auteur :** Yahaya Meddy
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_8555bda7}`

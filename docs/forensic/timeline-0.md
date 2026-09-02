@@ -6,7 +6,8 @@ title: "Timeline 0"
 
 Analyse d'image disque, création de MAC Timeline & Timestomping
 
-**Plateforme :** picoCTF 2026 · **Catégorie :** Forensics / Disk · **Difficulté / Auteur :** Medium / LT 'syreal' Jones
+**Plateforme :** picoCTF 2026 · **Catégorie :** Forensics / Disk · **Difficulté :** *Medium*{: .badge-medium} · **Auteur :** LT 'syreal' Jones
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{71m311n3_0u7113r_h3r_43a2e7af}`

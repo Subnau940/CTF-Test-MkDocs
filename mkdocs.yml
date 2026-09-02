@@ -10,26 +10,21 @@ theme:
   language: fr
   favicon: assets/favicon.svg
   icon:
-    logo: material/flag-variant
+    logo: fontawesome/solid/terminal
+    repo: fontawesome/brands/github
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: deep purple
-      accent: deep purple
-      toggle:
-        icon: material/weather-night
-        name: Passer en mode sombre
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: deep purple
-      accent: deep purple
-      toggle:
-        icon: material/weather-sunny
-        name: Passer en mode clair
+    - scheme: slate
+      primary: black
+      accent: green
+  font:
+    text: JetBrains Mono
+    code: JetBrains Mono
   features:
     - navigation.instant
+    - navigation.instant.progress
     - navigation.tracking
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.footer
     - navigation.indexes
@@ -37,10 +32,14 @@ theme:
     - search.highlight
     - content.code.copy
     - content.action.edit
+    - content.tabs.link
     - toc.follow
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/pdf-button.js
 
 markdown_extensions:
   - admonition

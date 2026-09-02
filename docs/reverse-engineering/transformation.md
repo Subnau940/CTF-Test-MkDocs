@@ -4,7 +4,8 @@ title: "Transformation"
 
 # ⚙️ Transformation
 
-**Plateforme :** picoCTF 2021 · **Catégorie :** Reverse Engineering · **Difficulté :** Facile
+**Plateforme :** picoCTF 2021 · **Catégorie :** Reverse Engineering · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{16_bits_inst34d_of_8_b7f62ca5}`

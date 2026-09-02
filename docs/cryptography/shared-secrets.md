@@ -4,7 +4,8 @@ title: "Shared Secrets"
 
 # 🔑 Shared Secrets (Diffie-Hellman mal dérivé)
 
-**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** Easy
+**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{dh_s3cr3t_bd38f376}`

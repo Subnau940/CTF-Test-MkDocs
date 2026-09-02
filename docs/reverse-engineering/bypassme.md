@@ -4,7 +4,8 @@ title: "Bypassme"
 
 # ⚙️ Bypass Me (LLDB + SUID)
 
-**Plateforme :** picoCTF · **Catégorie :** Reverse Engineering · **Difficulté :** Medium
+**Plateforme :** picoCTF · **Catégorie :** Reverse Engineering · **Difficulté :** *Medium*{: .badge-medium}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{d3bugg3r_p0w3r_is_4w3s0m3_30b6c610}`

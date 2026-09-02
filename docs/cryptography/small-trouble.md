@@ -4,7 +4,8 @@ title: "Small Trouble"
 
 # 🔑 Small Trouble (Boneh-Durfee, d trop petit)
 
-**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** Medium
+**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** *Medium*{: .badge-medium}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{sm4ll_d_57ff60e1}`

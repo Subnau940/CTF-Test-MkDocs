@@ -8,7 +8,7 @@ Comprendre le fonctionnement interne d'un programme pour en détourner la logiqu
 
 | Challenge | Concept | Difficulté |
 | :--- | :--- | :---: |
-| [Bypassme](bypassme.md) | Débogueur (LLDB) + bit SUID désactivé sous débogueur | Medium |
-| [Flag Hunters](flag-hunters.md) | Injection de séparateur + détournement de pointeur d'instruction | Easy-Medium |
-| [Transformation](transformation.md) | Dépaquetage binaire 16 bits (opérations bit-à-bit) | Easy |
-| [VaultDoorTraining](vaultdoor-training.md) | Mot de passe en clair dans le code source | Intro |
+| [Bypassme](bypassme.md) | Débogueur (LLDB) + bit SUID désactivé sous débogueur | *Medium*{: .badge-medium} |
+| [Flag Hunters](flag-hunters.md) | Injection de séparateur + détournement de pointeur d'instruction | *Easy-Medium*{: .badge-medium} |
+| [Transformation](transformation.md) | Dépaquetage binaire 16 bits (opérations bit-à-bit) | *Easy*{: .badge-easy} |
+| [VaultDoorTraining](vaultdoor-training.md) | Mot de passe en clair dans le code source | *Intro*{: .badge-intro} |

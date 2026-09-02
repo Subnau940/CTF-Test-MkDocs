@@ -6,7 +6,8 @@ title: "Timestamped Secrets"
 
 Attaque sur PRNG prédictible basé sur un timestamp Unix (AES-128-ECB)
 
-**Plateforme :** picoCTF 2026 · **Catégorie :** Cryptography · **Difficulté / Auteur :** Medium / Yahaya Meddy
+**Plateforme :** picoCTF 2026 · **Catégorie :** Cryptography · **Difficulté :** *Medium*{: .badge-medium} · **Auteur :** Yahaya Meddy
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{sa3S_sEc9t_194672d0}`

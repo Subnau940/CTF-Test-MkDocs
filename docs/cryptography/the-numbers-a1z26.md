@@ -4,7 +4,8 @@ title: "The Numbers (A1Z26)"
 
 # 🔑 The Numbers (A1Z26)
 
-**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** Intro
+**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** *Intro*{: .badge-intro}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{THENUMBERSMASON}`

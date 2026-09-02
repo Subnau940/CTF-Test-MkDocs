@@ -19,7 +19,8 @@ title: "Nom du challenge"
 
 # 🔑 Nom du challenge
 
-**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** Easy
+**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{...}`
@@ -85,6 +86,21 @@ git push
 ```
 
 Le site (et le PDF téléchargeable) se régénèrent automatiquement sur GitHub Pages en 1 à 2 minutes.
+
+## Badges de difficulté
+
+Sur la ligne de métadonnées, entoure la valeur de difficulté avec `*...*{: .classe}` pour obtenir un badge coloré, et ajoute `{: .ctf-meta}` juste en dessous pour styler toute la ligne comme un bandeau :
+
+```markdown
+**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
+```
+
+Classes disponibles : `.badge-intro` (cyan), `.badge-easy` (vert), `.badge-medium` (jaune), `.badge-hard` (rouge).
+
+## Bouton "Télécharger en PDF"
+
+Rien à faire : dès qu'une page contient un bloc `!!! success "Flag"`, le bouton de téléchargement PDF (impression navigateur stylée) apparaît automatiquement en haut de l'article — c'est ce qui identifie une page comme étant un writeup de challenge plutôt qu'une page d'index.
 
 ## Blocs utiles (admonitions Material)
 

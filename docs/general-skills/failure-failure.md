@@ -6,7 +6,8 @@ title: "Failure Failure"
 
 Failover HAProxy — rate limit & bascule backup
 
-**Plateforme :** picoCTF · **Catégorie :** General Skills · **Difficulté :** Medium
+**Plateforme :** picoCTF · **Catégorie :** General Skills · **Difficulté :** *Medium*{: .badge-medium}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{f41l0v3r_f0r_7h3_w1n_ec6ea57b}`

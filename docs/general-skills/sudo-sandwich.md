@@ -6,7 +6,8 @@ title: "Sudo make me a sandwich"
 
 Élévation de privilèges via configuration Sudo permissive (Emacs)
 
-**Plateforme :** picoCTF 2026 · **Catégorie :** General Skills / PrivEsc · **Difficulté / Auteur :** Easy / Darkraicg492
+**Plateforme :** picoCTF 2026 · **Catégorie :** General Skills / PrivEsc · **Difficulté :** *Easy*{: .badge-easy} · **Auteur :** Darkraicg492
+{: .ctf-meta}
 
 !!! success "Flag"
     Présent dans `flag.txt` (lu via Emacs avec privilèges root)

@@ -4,7 +4,8 @@ title: "EVEN RSA CAN BE BROKEN"
 
 # 🔑 EVEN RSA CAN BE BROKEN??? (N pair)
 
-**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** Easy
+**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{tw0_1$_pr!m3lc9046c4}`

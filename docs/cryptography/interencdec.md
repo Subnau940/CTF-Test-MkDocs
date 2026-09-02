@@ -4,7 +4,8 @@ title: "interencdec"
 
 # 🔑 Double Base64 + César
 
-**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** Easy
+**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{caesar_d3cr9pt3d_78250af...}`

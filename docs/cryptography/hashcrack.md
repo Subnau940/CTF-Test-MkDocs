@@ -4,7 +4,8 @@ title: "hashcrack"
 
 # 🔑 Chaîne de hash à cracker (MD5 → SHA1 → SHA256)
 
-**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** Easy
+**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{UseStr0nG_h@shEs_&PaSswDs!_5b836723}`

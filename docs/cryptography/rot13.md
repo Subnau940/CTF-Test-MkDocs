@@ -4,7 +4,8 @@ title: "13 (ROT13)"
 
 # 🔑 13 — ROT13
 
-**Plateforme :** picoCTF · **Challenge :** 13 · **Catégorie :** Cryptography · **Difficulté :** Intro
+**Plateforme :** picoCTF · **Challenge :** 13 · **Catégorie :** Cryptography · **Difficulté :** *Intro*{: .badge-intro}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{not_too_bad_of_a_problem}`

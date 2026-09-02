@@ -4,7 +4,8 @@ title: "StegoRSA"
 
 # 🔑 StegoRSA (clé cachée dans une image)
 
-**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** Easy
+**Plateforme :** picoCTF · **Catégorie :** Cryptography · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{rs4_k3y_1n_1mg_51611ab8}`

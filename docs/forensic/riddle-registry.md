@@ -4,7 +4,8 @@ title: "Riddle Registry"
 
 # 🕵️ Flag caché dans les métadonnées PDF
 
-**Plateforme :** picoCTF · **Challenge :** The Ultimate Guide to Flag Hunting · **Catégorie :** Forensics · **Difficulté :** Intro
+**Plateforme :** picoCTF · **Challenge :** The Ultimate Guide to Flag Hunting · **Catégorie :** Forensics · **Difficulté :** *Intro*{: .badge-intro}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{puzzl3d_m3tadata_f0und!_c999e2a4}`

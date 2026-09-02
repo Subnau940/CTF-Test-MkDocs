@@ -6,7 +6,8 @@ title: "Absolute Nano"
 
 Escalade de privilèges via sudoers + nano
 
-**Plateforme :** picoCTF 2026 · **Catégorie :** General Skills · **Difficulté :** Easy
+**Plateforme :** picoCTF 2026 · **Catégorie :** General Skills · **Difficulté :** *Easy*{: .badge-easy}
+{: .ctf-meta}
 
 !!! success "Flag"
     `picoCTF{n4n0_411_7h3_w4y_dd490b88}`
