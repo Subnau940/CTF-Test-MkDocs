@@ -1,0 +1,110 @@
+site_name: CTF Writeups — Matteo Grech
+site_description: Base de connaissances des writeups CTF (Cryptography, Forensics, Reverse Engineering, Web Exploitation, General Skills)
+site_author: Matteo Grech
+repo_name: Subnau940/CTF-Test-MkDocs
+repo_url: https://github.com/Subnau940/CTF-Test-MkDocs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: fr
+  favicon: assets/favicon.svg
+  icon:
+    logo: material/flag-variant
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode clair
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search:
+      lang: fr
+  - with-pdf:
+      author: Matteo Grech
+      copyright: CTF Writeups — Matteo Grech
+      cover_title: CTF Writeups
+      cover_subtitle: Recueil de writeups — Cryptography, Forensics, Reverse Engineering, Web Exploitation, General Skills
+      output_path: pdf/ctf-writeups.pdf
+      enabled_if_env: ENABLE_PDF_EXPORT
+
+nav:
+  - Accueil: index.md
+  - Cryptography:
+      - cryptography/index.md
+      - "13 (ROT13)": cryptography/rot13.md
+      - "EVEN RSA CAN BE BROKEN": cryptography/even-rsa.md
+      - Shared Secrets: cryptography/shared-secrets.md
+      - Small Trouble (Boneh-Durfee): cryptography/small-trouble.md
+      - StegoRSA: cryptography/stegorsa.md
+      - "The Numbers (A1Z26)": cryptography/the-numbers-a1z26.md
+      - Timestamped Secrets: cryptography/timestamped-secrets.md
+      - hashcrack: cryptography/hashcrack.md
+      - interencdec: cryptography/interencdec.md
+  - Forensic:
+      - forensic/index.md
+      - Ph4nt0m 1ntrud3r (PCAP): forensic/ph4ntom-1ntrud3r.md
+      - Riddle Registry (métadonnées PDF): forensic/riddle-registry.md
+      - Timeline 0 (Timestomping): forensic/timeline-0.md
+  - General skills:
+      - general-skills/index.md
+      - Absolute Nano: general-skills/absolute-nano.md
+      - Failure Failure (HAProxy failover): general-skills/failure-failure.md
+      - Sudo make me a sandwich: general-skills/sudo-sandwich.md
+      - ping-cmd: general-skills/ping-cmd.md
+  - Reverse Engineering:
+      - reverse-engineering/index.md
+      - Bypassme (LLDB + SUID): reverse-engineering/bypassme.md
+      - Flag Hunters: reverse-engineering/flag-hunters.md
+      - Transformation: reverse-engineering/transformation.md
+      - VaultDoorTraining: reverse-engineering/vaultdoor-training.md
+  - Web exploitation:
+      - web-exploitation/index.md
+      - "Crack the Gate 1 (backdoor header)": web-exploitation/crack-the-gate-1.md
+      - Old Sessions (session hijacking): web-exploitation/old-sessions.md
+      - "SQL / SQLiLite": web-exploitation/sqlilite.md
+  - Contribuer: contributing.md

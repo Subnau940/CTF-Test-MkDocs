@@ -1,62 +1,64 @@
 # 🚩 CTF Writeups
 
-Ce dépôt rassemble mes comptes-rendus de résolution de challenges CTF. L'objectif est de documenter mes méthodologies d'attaque, d'expliquer les concepts techniques (cryptographie, forensic, reverse, exploitation web) et de capitaliser sur chaque vulnérabilité exploitée.
+Base de connaissances de mes résolutions de challenges CTF (picoCTF principalement), construite avec [MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), hébergée sur GitHub Pages.
+
+**Le site est vivant et modifiable en quelques minutes** : chaque writeup est un simple fichier Markdown, versionné avec le reste du dépôt. Fini le PDF statique refait à la main dès qu'un outil ou une méthodo évolue.
+
+## 📖 Le site
+
+➡️ **[Voir le site en ligne](https://subnau940.github.io/CTF-Test-MkDocs/)** *(activer GitHub Pages sur ce repo — voir plus bas)*
+
+Le site propose aussi un **téléchargement PDF de l'ensemble du site**, régénéré automatiquement à chaque déploiement (donc toujours synchronisé avec la dernière version des writeups) — bouton en haut de la page d'accueil.
 
 ## 📂 Structure
 
-Les writeups sont classés par catégorie, chaque challenge ayant son propre dossier contenant le PDF d'analyse et, le cas échéant, les fichiers annexes (scripts, captures réseau, exports...).
+```text
+docs/                       ← contenu du site (source de vérité)
+├── index.md                ← page d'accueil
+├── contributing.md         ← guide pour ajouter un writeup
+├── cryptography/
+├── forensic/
+├── general-skills/
+├── reverse-engineering/
+└── web-exploitation/
+mkdocs.yml                  ← configuration du site (thème, plugins, navigation)
+requirements.txt            ← dépendances Python (mkdocs, thème, plugin PDF)
+.github/workflows/deploy.yml← build + déploiement automatique sur GitHub Pages
+```
 
-| Catégorie | Challenges |
-| :--- | :---: |
-| [🔑 Cryptography](#-cryptography) | 8 |
-| [🕵️ Forensic](#️-forensic) | 3 |
-| [🧰 General skills](#-general-skills) | 2 |
-| [⚙️ Reverse Engineering](#️-reverse-engineering) | 2 |
-| [🌐 Web exploitation](#-web-exploitation) | 3 |
+Les catégories reprennent la même organisation que l'ancien classement par dossiers (Cryptography, Forensic, General skills, Reverse Engineering, Web exploitation) : 23 writeups au total.
 
----
+## 🚀 Développer en local
 
-### 🔑 Cryptography
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 
-| Challenge | Concept | Writeup |
-| :--- | :--- | :--- |
-| 13 | ROT13 | [PDF](./Cryptography/13/writeup-crypto-rot13.pdf) |
-| EVEN RSA CAN BE BROKEN | RSA | [PDF](<./Cryptography/EVEN RSA CAN BE BROKEN/writeup-crypto-evenrsa.pdf>) |
-| Shared Secrets | Échange de clés | [PDF](<./Cryptography/Shared Secrets/writeup-crypto-sharedsecrets.pdf>) |
-| Small Trouble (medium) | Attaque Boneh-Durfee (RSA) | [PDF](<./Cryptography/Small Trouble (medium)/writeup-crypto-bonehdurfee.pdf>) |
-| StegoRSA | Stéganographie + RSA | [PDF](./Cryptography/StegoRSA/writeup-crypto-stegorsa.pdf) |
-| The Numbers (A1Z26) | Chiffrement A1Z26 | [PDF](<./Cryptography/The Numbers (A1Z26)/writeup-crypto-a1z26.pdf>) |
-| Timestamped Secrets (Medium) | Faiblesse de seed temporelle | [PDF](<./Cryptography/Timestamped Secrets (Medium)/writeup-timestamped-secrets.pdf>) |
-| hashcrack | Cassage de hash | [PDF](./Cryptography/hashcrack/writeup-crypto-hashcrack.pdf) |
-| interencdec | Base64 + César imbriqués | [PDF](./Cryptography/interencdec/writeup-crypto-doubleb64caesar.pdf) |
+mkdocs serve
+```
 
-### 🕵️ Forensic
+Le site est servi sur `http://127.0.0.1:8000` avec rechargement automatique à chaque sauvegarde. La génération PDF est désactivée par défaut en local (trop lente pour de l'itération rapide) — elle ne tourne qu'en CI via la variable d'environnement `ENABLE_PDF_EXPORT=1`. Pour la tester en local :
 
-| Challenge | Concept | Writeup | Fichiers annexes |
-| :--- | :--- | :--- | :--- |
-| Ph4nt0m 1ntrud3r | Analyse de capture réseau (pcap) | [PDF](<./Forensic/Ph4nt0m 1ntrud3r/writeup-forensics-pcap.pdf>) | [pcap](<./Forensic/Ph4nt0m 1ntrud3r/myNetworkTraffic.pcap>), [csv](<./Forensic/Ph4nt0m 1ntrud3r/test.csv>) |
-| Riddle Registry | Métadonnées de fichier | [PDF](<./Forensic/Riddle Registry/writeup-pdf-metadata.pdf>) | — |
-| Timeline 0 (medium) | Reconstruction de timeline | [PDF](<./Forensic/Timeline 0 (medium)/writeup-forensics-timeline0.pdf>) | — |
+```bash
+ENABLE_PDF_EXPORT=1 mkdocs build
+```
 
-### 🧰 General skills
+## ✍️ Ajouter un writeup
 
-| Challenge | Concept | Writeup |
-| :--- | :--- | :--- |
-| Sudo make me a sandwich | Droits `sudo` mal configurés | [PDF](<./General skills/Sudo make me a sandwich/writeup-sudo-make-me-a-sandwich.pdf>) |
-| ping-cmd | Injection de commande | [PDF](<./General skills/ping-cmd/writeup-ping-cmd.pdf>) |
+Voir le guide détaillé : [docs/contributing.md](docs/contributing.md) (aussi disponible sur le site, page « Contribuer »).
 
-### ⚙️ Reverse Engineering
+En résumé : créer un fichier `.md` dans le bon dossier de catégorie à partir du squelette fourni, l'ajouter à la section `nav:` de `mkdocs.yml`, puis `git push` — le site (et le PDF) se reconstruisent automatiquement.
 
-| Challenge | Concept | Writeup | Fichiers annexes |
-| :--- | :--- | :--- | :--- |
-| Flag Hunters | Injection de séparateur d'instructions, pointeur d'instruction (IP), Python | [PDF](<./Reverse Engineering/Flag Hunters/Writeup_Flag_Hunters_picoCTF.pdf>) | — |
-| Transformation | Opérations bit-à-bit, encodage Unicode, dépaquetage 16→8 bits | [PDF](<./Reverse Engineering/Transformation/Writeup_Transformation_picoCTF.pdf>) | [script](<./Reverse Engineering/Transformation/test.py>) |
+## ⚙️ Activer l'hébergement (GitHub Pages)
 
-### 🌐 Web exploitation
+1. Sur GitHub : **Settings → Pages → Build and deployment → Source : GitHub Actions**.
+2. Pousser sur `main` déclenche `.github/workflows/deploy.yml`, qui build le site avec MkDocs (PDF inclus) et le déploie.
+3. L'URL du site apparaît ensuite dans **Settings → Pages** (généralement `https://subnau940.github.io/CTF-Test-MkDocs/`).
 
-| Challenge | Concept | Writeup |
-| :--- | :--- | :--- |
-| Crack the Gate 1 | Falsification d'en-tête HTTP | [PDF](<./Web exploitation/Crack the Gate 1/writeup-backdoor-header.pdf>) |
-| Old Sessions | Détournement de session | [PDF](<./Web exploitation/Old Sessions/writeup-session-hijacking.pdf>) |
-| SQL / SQLiLite | Injection SQL | [PDF](<./Web exploitation/SQL/SQLiLite/writeup-injection-sql.pdf>) |
+## 🧩 Pile technique
 
+- [MkDocs](https://www.mkdocs.org/) — générateur de site statique à partir de Markdown
+- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) — thème (recherche, mode sombre, navigation, coloration syntaxique)
+- [mkdocs-with-pdf](https://github.com/orzih/mkdocs-with-pdf) — export du site entier en un PDF téléchargeable, régénéré à chaque build
+- GitHub Actions + GitHub Pages — build et hébergement automatiques

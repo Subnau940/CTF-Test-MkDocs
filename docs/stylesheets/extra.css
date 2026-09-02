@@ -1,0 +1,24 @@
+.md-typeset table:not([class]) {
+  font-size: 0.75rem;
+}
+
+.md-typeset .admonition.flag,
+.md-typeset details.flag {
+  border-color: #4527a0;
+}
+
+.md-typeset .flag > .admonition-title,
+.md-typeset .flag > summary {
+  background-color: rgba(69, 39, 160, 0.1);
+}
+
+.md-typeset .flag > .admonition-title::before,
+.md-typeset .flag > summary::before {
+  background-color: #4527a0;
+  -webkit-mask-image: var(--md-admonition-icon--success);
+  mask-image: var(--md-admonition-icon--success);
+}
+
+.md-typeset code {
+  word-break: break-word;
+}
