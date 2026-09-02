@@ -339,32 +339,66 @@ body {
    --------------------------------------------------------------------- */
 
 .pdf-download-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
-  margin: 0 0 1.4em;
-  padding: 0.55em 1.1em;
-  background-color: transparent;
+  gap: 0.6em;
+  margin: 0 0 1.6em;
+  padding: 0.7em 1.4em;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(34, 225, 255, 0.1), rgba(255, 47, 146, 0.08));
   color: var(--ctf-cyan);
   border: 1px solid var(--ctf-cyan);
-  border-radius: 2px;
+  border-radius: 4px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.03em;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 0 0 1px rgba(34, 225, 255, 0.12), 0 0 22px rgba(34, 225, 255, 0.22);
+  transition: color 0.15s ease, background-color 0.15s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.pdf-download-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(34, 225, 255, 0.35) 50%, transparent 60%);
+  transform: translateX(-120%);
+  animation: pdf-btn-sweep 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pdf-btn-sweep {
+  0%, 35% {
+    transform: translateX(-120%);
+  }
+  65%, 100% {
+    transform: translateX(120%);
+  }
 }
 
 .pdf-download-btn:hover {
-  background-color: var(--ctf-cyan);
   color: #04070b;
-  box-shadow: 0 0 18px rgba(34, 225, 255, 0.5);
+  background-color: var(--ctf-cyan);
+  box-shadow: 0 0 34px rgba(34, 225, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.pdf-download-btn:active {
+  transform: translateY(0);
+}
+
+.pdf-download-btn__icon,
+.pdf-download-btn__label {
+  position: relative;
+  z-index: 1;
 }
 
 .pdf-download-btn__icon {
-  font-size: 1em;
+  font-size: 1.05em;
+  filter: drop-shadow(0 0 6px currentColor);
 }
 
 /* ---------------------------------------------------------------------
@@ -397,11 +431,27 @@ body {
 }
 
 /* =====================================================================
-   Print — the actual PDF output. Force a clean, printable, ink-friendly
-   document regardless of the neon dark theme used on screen.
+   Print — the actual PDF output. A clean, professional report layout
+   (light background, readable sans-serif, colored accents), independent
+   of the neon terminal theme used on screen — styled to match the look
+   of the original hand-made writeup PDFs.
    ===================================================================== */
 
 @media print {
+  :root {
+    --pdf-ink: #16222c;
+    --pdf-ink-dim: #55636c;
+    --pdf-accent: #0e7490;
+    --pdf-accent-dark: #0a5065;
+    --pdf-accent-soft: #eaf6f9;
+    --pdf-line: #cfd8dc;
+    --pdf-panel: #f6f9fa;
+  }
+
+  @page {
+    margin: 16mm 14mm;
+  }
+
   .md-header,
   .md-tabs,
   .md-sidebar,
@@ -418,8 +468,11 @@ body {
   body,
   .md-typeset {
     background: #ffffff !important;
-    color: #111111 !important;
+    color: var(--pdf-ink) !important;
     background-image: none !important;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 12.5px;
+    line-height: 1.55;
   }
 
   .md-main__inner {
@@ -430,65 +483,131 @@ body {
     max-width: 100% !important;
   }
 
+  /* Masthead — small branded strip above the title, like a report header */
+  .md-content__inner::before {
+    content: "CTF WRITEUPS — MATTEO GRECH";
+    display: block;
+    color: var(--pdf-accent);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    font-size: 9px;
+    margin-bottom: 0.8em;
+  }
+
   .md-typeset h1,
   .md-typeset h2,
   .md-typeset h3 {
-    color: #0a1a2a !important;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    color: var(--pdf-accent-dark) !important;
     text-shadow: none !important;
+    break-after: avoid;
+  }
+
+  .md-typeset h1 {
+    font-size: 22px;
+    border-bottom: 3px solid var(--pdf-accent) !important;
+    padding-bottom: 0.3em;
+  }
+
+  .md-typeset h2 {
+    font-size: 15px;
+    margin-top: 1.6em;
+    padding-bottom: 0.2em;
+    padding-left: 0.55em;
+    border-bottom: 1px solid var(--pdf-line) !important;
+    border-left: 4px solid var(--pdf-accent) !important;
   }
 
   .md-typeset h2::before {
-    color: #555555 !important;
-    text-shadow: none !important;
+    content: "" !important;
+  }
+
+  .md-typeset h3 {
+    font-size: 13px;
+    color: var(--pdf-ink) !important;
   }
 
   .md-typeset a {
-    color: #0a58a0 !important;
+    color: var(--pdf-accent-dark) !important;
+    text-decoration: underline;
   }
 
-  .md-typeset .highlight,
-  .md-typeset pre,
   .md-typeset code {
-    background-color: #f4f4f4 !important;
-    color: #111111 !important;
-    border-color: #cccccc !important;
+    font-family: "JetBrains Mono", "Courier New", monospace !important;
+    background-color: var(--pdf-panel) !important;
+    color: #0f2a33 !important;
+    border: 1px solid var(--pdf-line);
     box-shadow: none !important;
   }
 
-  .md-typeset .admonition,
-  .md-typeset details {
-    background-color: #f7f7f7 !important;
-    border-color: #999999 !important;
+  .md-typeset .highlight,
+  .md-typeset pre {
+    background-color: var(--pdf-panel) !important;
+    border: 1px solid var(--pdf-line) !important;
+    border-left: 3px solid var(--pdf-accent) !important;
     box-shadow: none !important;
     break-inside: avoid;
   }
 
-  .md-typeset p.ctf-meta {
-    background-color: #f7f7f7 !important;
-    border-color: #999999 !important;
+  .md-typeset pre code {
+    border: none !important;
+    background-color: transparent !important;
   }
 
-  .md-typeset table:not([class]) {
-    border-color: #999999 !important;
+  .md-typeset .admonition,
+  .md-typeset details {
+    background-color: var(--pdf-panel) !important;
+    border: 1px solid var(--pdf-line) !important;
+    border-left: 4px solid var(--pdf-accent) !important;
+    box-shadow: none !important;
+    break-inside: avoid;
   }
 
-  .md-typeset table:not([class]) th,
-  .md-typeset table:not([class]) td,
-  .md-typeset table:not([class]) tr {
-    background-color: #ffffff !important;
-    color: #111111 !important;
-    border-color: #cccccc !important;
-  }
-
-  .md-typeset table:not([class]) th {
-    background-color: #eeeeee !important;
+  .md-typeset .admonition.success,
+  .md-typeset details.success {
+    border-left-color: #1a8a4a !important;
+    background-color: #eefaf1 !important;
   }
 
   .md-typeset .admonition-title,
   .md-typeset summary,
   .md-typeset .admonition-title *,
   .md-typeset summary * {
-    color: #111111 !important;
+    color: var(--pdf-ink) !important;
+  }
+
+  .md-typeset p.ctf-meta {
+    background-color: var(--pdf-accent-soft) !important;
+    border: 1px solid var(--pdf-line) !important;
+    border-left: 4px solid var(--pdf-accent) !important;
+    break-inside: avoid;
+  }
+
+  .md-typeset p.ctf-meta strong {
+    color: var(--pdf-ink-dim) !important;
+  }
+
+  .md-typeset table:not([class]) {
+    border: none !important;
+    break-inside: auto;
+  }
+
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    border: 1px solid var(--pdf-line) !important;
+    color: var(--pdf-ink) !important;
+    background-color: #ffffff !important;
+  }
+
+  .md-typeset table:not([class]) th {
+    background-color: var(--pdf-accent-dark) !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .md-typeset table:not([class]) tr:nth-child(even) td {
+    background-color: var(--pdf-panel) !important;
   }
 
   .badge-intro,
@@ -496,5 +615,12 @@ body {
   .badge-medium,
   .badge-hard {
     text-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
+
+  .badge-intro { color: var(--pdf-accent-dark) !important; }
+  .badge-easy { color: #1a8a4a !important; }
+  .badge-medium { color: #a86400 !important; }
+  .badge-hard { color: #b5233a !important; }
 }

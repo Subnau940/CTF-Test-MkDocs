@@ -21,7 +21,8 @@
     btn.className = "pdf-download-btn";
     btn.setAttribute("aria-label", "Télécharger ce writeup en PDF");
     btn.innerHTML =
-      '<span class="pdf-download-btn__icon" aria-hidden="true">&#11015;</span> Télécharger ce writeup en PDF';
+      '<span class="pdf-download-btn__icon" aria-hidden="true">&#11015;</span>' +
+      '<span class="pdf-download-btn__label">Télécharger en PDF</span>';
     btn.addEventListener("click", function () {
       window.print();
     });

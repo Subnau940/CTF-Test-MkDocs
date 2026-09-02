@@ -10,7 +10,7 @@ Base de connaissances de mes résolutions de challenges CTF (picoCTF principalem
 
 > ⚠️ L'URL est sensible à la casse sur le nom du repo : `CTF-Test-MkDocs`, pas `ctf-test-mkdocs`.
 
-Le site propose aussi un **téléchargement PDF de l'ensemble du site**, régénéré automatiquement à chaque déploiement (donc toujours synchronisé avec la dernière version des writeups) — bouton en haut de la page d'accueil.
+Chaque writeup propose son propre bouton **« Télécharger en PDF »** en haut de page (impression navigateur stylée — instantané, toujours à jour avec le contenu affiché).
 
 ## 📂 Structure
 
@@ -24,7 +24,7 @@ docs/                       ← contenu du site (source de vérité)
 ├── reverse-engineering/
 └── web-exploitation/
 mkdocs.yml                  ← configuration du site (thème, plugins, navigation)
-requirements.txt            ← dépendances Python (mkdocs, thème, plugin PDF)
+requirements.txt            ← dépendances Python (mkdocs, thème)
 .github/workflows/deploy.yml← build + déploiement automatique sur GitHub Pages
 ```
 
@@ -40,27 +40,23 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-Le site est servi sur `http://127.0.0.1:8000` avec rechargement automatique à chaque sauvegarde. La génération PDF est désactivée par défaut en local (trop lente pour de l'itération rapide) — elle ne tourne qu'en CI via la variable d'environnement `ENABLE_PDF_EXPORT=1`. Pour la tester en local :
-
-```bash
-ENABLE_PDF_EXPORT=1 mkdocs build
-```
+Le site est servi sur `http://127.0.0.1:8000` avec rechargement automatique à chaque sauvegarde.
 
 ## ✍️ Ajouter un writeup
 
 Voir le guide détaillé : [docs/contributing.md](docs/contributing.md) (aussi disponible sur le site, page « Contribuer »).
 
-En résumé : créer un fichier `.md` dans le bon dossier de catégorie à partir du squelette fourni, l'ajouter à la section `nav:` de `mkdocs.yml`, puis `git push` — le site (et le PDF) se reconstruisent automatiquement.
+En résumé : créer un fichier `.md` dans le bon dossier de catégorie à partir du squelette fourni, l'ajouter à la section `nav:` de `mkdocs.yml`, puis `git push` — le site se reconstruit automatiquement.
 
 ## ⚙️ Activer l'hébergement (GitHub Pages)
 
 1. Sur GitHub : **Settings → Pages → Build and deployment → Source : GitHub Actions**.
-2. Pousser sur `main` déclenche `.github/workflows/deploy.yml`, qui build le site avec MkDocs (PDF inclus) et le déploie.
+2. Pousser sur `main` déclenche `.github/workflows/deploy.yml`, qui build le site avec MkDocs et le déploie.
 3. L'URL du site apparaît ensuite dans **Settings → Pages** (généralement `https://subnau940.github.io/CTF-Test-MkDocs/`).
 
 ## 🧩 Pile technique
 
 - [MkDocs](https://www.mkdocs.org/) — générateur de site statique à partir de Markdown
-- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) — thème (recherche, mode sombre, navigation, coloration syntaxique)
-- [mkdocs-with-pdf](https://github.com/orzih/mkdocs-with-pdf) — export du site entier en un PDF téléchargeable, régénéré à chaque build
+- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) — thème (recherche, navigation, coloration syntaxique), personnalisé en thème "hacker terminal"
+- Bouton PDF par writeup — impression navigateur stylée via CSS `@media print` dédié, sans dépendance serveur
 - GitHub Actions + GitHub Pages — build et hébergement automatiques

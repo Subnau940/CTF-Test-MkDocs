@@ -75,7 +75,7 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-Le site est servi sur `http://127.0.0.1:8000` avec rechargement automatique à chaque sauvegarde. (La génération PDF est désactivée par défaut en local pour aller plus vite — elle ne tourne qu'en CI, via la variable `ENABLE_PDF_EXPORT`.)
+Le site est servi sur `http://127.0.0.1:8000` avec rechargement automatique à chaque sauvegarde.
 
 ## 5. Push
 
@@ -85,7 +85,7 @@ git commit -m "Ajoute le writeup <nom du challenge>"
 git push
 ```
 
-Le site (et le PDF téléchargeable) se régénèrent automatiquement sur GitHub Pages en 1 à 2 minutes.
+Le site se régénère automatiquement sur GitHub Pages en 1 à 2 minutes.
 
 ## Badges de difficulté
 
