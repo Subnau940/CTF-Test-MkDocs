@@ -485,7 +485,7 @@ body {
 
   /* Masthead — small branded strip above the title, like a report header */
   .md-content__inner::before {
-    content: "CTF WRITEUPS — MATTEO GRECH";
+    content: "CTF WRITEUPS — SUBNAU940";
     display: block;
     color: var(--pdf-accent);
     font-weight: 700;
