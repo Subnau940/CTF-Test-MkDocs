@@ -1,5 +1,5 @@
-site_name: CTF Writeups — Subnau940
-site_description: Base de connaissances des writeups CTF (Cryptography, Forensics, Reverse Engineering, Web Exploitation, General Skills)
+site_name: Subnau — Base de connaissances
+site_description: Base de connaissances cybersécurité de Mattéo Grech — writeups CTF et documentation de projets (IA, lab)
 site_author: Subnau940
 repo_name: Subnau940/CTF-Test-MkDocs
 repo_url: https://github.com/Subnau940/CTF-Test-MkDocs
@@ -66,40 +66,46 @@ markdown_extensions:
 plugins:
   - search:
       lang: fr
+  - callouts
 
 nav:
   - Accueil: index.md
-  - Cryptography:
-      - cryptography/index.md
-      - "13 (ROT13)": cryptography/rot13.md
-      - "EVEN RSA CAN BE BROKEN": cryptography/even-rsa.md
-      - Shared Secrets: cryptography/shared-secrets.md
-      - Small Trouble (Boneh-Durfee): cryptography/small-trouble.md
-      - StegoRSA: cryptography/stegorsa.md
-      - "The Numbers (A1Z26)": cryptography/the-numbers-a1z26.md
-      - Timestamped Secrets: cryptography/timestamped-secrets.md
-      - hashcrack: cryptography/hashcrack.md
-      - interencdec: cryptography/interencdec.md
-  - Forensic:
-      - forensic/index.md
-      - Ph4nt0m 1ntrud3r (PCAP): forensic/ph4ntom-1ntrud3r.md
-      - Riddle Registry (métadonnées PDF): forensic/riddle-registry.md
-      - Timeline 0 (Timestomping): forensic/timeline-0.md
-  - General skills:
-      - general-skills/index.md
-      - Absolute Nano: general-skills/absolute-nano.md
-      - Failure Failure (HAProxy failover): general-skills/failure-failure.md
-      - Sudo make me a sandwich: general-skills/sudo-sandwich.md
-      - ping-cmd: general-skills/ping-cmd.md
-  - Reverse Engineering:
-      - reverse-engineering/index.md
-      - Bypassme (LLDB + SUID): reverse-engineering/bypassme.md
-      - Flag Hunters: reverse-engineering/flag-hunters.md
-      - Transformation: reverse-engineering/transformation.md
-      - VaultDoorTraining: reverse-engineering/vaultdoor-training.md
-  - Web exploitation:
-      - web-exploitation/index.md
-      - "Crack the Gate 1 (backdoor header)": web-exploitation/crack-the-gate-1.md
-      - Old Sessions (session hijacking): web-exploitation/old-sessions.md
-      - "SQL / SQLiLite": web-exploitation/sqlilite.md
+  - CTF:
+      - ctf/index.md
+      - Cryptography:
+          - ctf/cryptography/index.md
+          - "13 (ROT13)": ctf/cryptography/rot13.md
+          - "EVEN RSA CAN BE BROKEN": ctf/cryptography/even-rsa.md
+          - Shared Secrets: ctf/cryptography/shared-secrets.md
+          - Small Trouble (Boneh-Durfee): ctf/cryptography/small-trouble.md
+          - StegoRSA: ctf/cryptography/stegorsa.md
+          - "The Numbers (A1Z26)": ctf/cryptography/the-numbers-a1z26.md
+          - Timestamped Secrets: ctf/cryptography/timestamped-secrets.md
+          - hashcrack: ctf/cryptography/hashcrack.md
+          - interencdec: ctf/cryptography/interencdec.md
+      - Forensic:
+          - ctf/forensic/index.md
+          - Ph4nt0m 1ntrud3r (PCAP): ctf/forensic/ph4ntom-1ntrud3r.md
+          - Riddle Registry (métadonnées PDF): ctf/forensic/riddle-registry.md
+          - Timeline 0 (Timestomping): ctf/forensic/timeline-0.md
+      - General skills:
+          - ctf/general-skills/index.md
+          - Absolute Nano: ctf/general-skills/absolute-nano.md
+          - Failure Failure (HAProxy failover): ctf/general-skills/failure-failure.md
+          - Sudo make me a sandwich: ctf/general-skills/sudo-sandwich.md
+          - ping-cmd: ctf/general-skills/ping-cmd.md
+      - Reverse Engineering:
+          - ctf/reverse-engineering/index.md
+          - Bypassme (LLDB + SUID): ctf/reverse-engineering/bypassme.md
+          - Flag Hunters: ctf/reverse-engineering/flag-hunters.md
+          - Transformation: ctf/reverse-engineering/transformation.md
+          - VaultDoorTraining: ctf/reverse-engineering/vaultdoor-training.md
+      - Web exploitation:
+          - ctf/web-exploitation/index.md
+          - "Crack the Gate 1 (backdoor header)": ctf/web-exploitation/crack-the-gate-1.md
+          - Old Sessions (session hijacking): ctf/web-exploitation/old-sessions.md
+          - "SQL / SQLiLite": ctf/web-exploitation/sqlilite.md
+  - Projets:
+      - projets/index.md
+      - IA Heretic locale (pentest): projets/ia-heretic.md
   - Contribuer: contributing.md
