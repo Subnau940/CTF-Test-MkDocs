@@ -2,26 +2,32 @@
 title: Accueil
 ---
 
-# 🚩 CTF Writeups
+# Base de connaissances
 
-Base de connaissances de mes résolutions de challenges CTF (picoCTF principalement) : méthodologie, concepts de cybersécurité expliqués, outils utilisés, et réflexes à retenir pour chaque catégorie.
+Mes notes de cybersécurité, rédigées au fil de l'apprentissage et tenues à jour : les writeups de CTF que je résous et la documentation de mes projets perso (IA, lab). Pour chaque sujet, je garde le *pourquoi* autant que le *comment* : la faille, la méthode, les erreurs, les fausses pistes.
 
-Chaque writeup suit le même plan : **résumé de la faille → méthodo pas à pas → outils → réflexes à retenir → application dans la vraie vie**. L'objectif n'est pas seulement de garder le flag, mais de capitaliser sur le *pourquoi* de chaque vulnérabilité.
+<div class="grid cards" markdown>
 
-[:material-pencil: Ajouter un writeup](contributing.md){ .md-button .md-button--primary }
+-   :material-flag-checkered: **CTF**
 
-## Catégories
+    ---
 
-| Catégorie | Challenges | Concepts couverts |
-| :--- | :---: | :--- |
-| [🔑 Cryptography](cryptography/index.md) | 9 | RSA, Diffie-Hellman, hachage, César, stéganographie |
-| [🕵️ Forensic](forensic/index.md) | 3 | PCAP, métadonnées, timeline disque, timestomping |
-| [🧰 General skills](general-skills/index.md) | 4 | PrivEsc sudo, command injection, load balancing |
-| [⚙️ Reverse Engineering](reverse-engineering/index.md) | 4 | LLDB, SUID, encodage bit-à-bit, VM/interpréteur custom |
-| [🌐 Web exploitation](web-exploitation/index.md) | 3 | Injection SQL, session hijacking, backdoor HTTP |
+    23 writeups (picoCTF principalement) en 5 catégories : cryptographie, forensic, reverse engineering, web, general skills.
+
+    [:octicons-arrow-right-24: Voir les writeups](ctf/index.md)
+
+-   :material-robot-outline: **Projets**
+
+    ---
+
+    Documentation complète de mes projets : choix, bugs, remises en question et résultats.
+
+    [:octicons-arrow-right-24: Voir les projets](projets/index.md)
+
+</div>
 
 ## Comment ce site fonctionne
 
-Ce site est généré avec [MkDocs](https://www.mkdocs.org/) et le thème [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) à partir de fichiers Markdown dans `docs/`. Il est hébergé sur GitHub Pages et se reconstruit automatiquement à chaque `push` sur `main` — écrire un writeup se résume à ajouter un fichier `.md` et l'ajouter à la navigation (voir [Contribuer](contributing.md)).
+Généré avec [MkDocs](https://www.mkdocs.org/) et [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) à partir de fichiers Markdown, il se reconstruit automatiquement à chaque `push` sur `main`. Les notes sont écrites dans Obsidian : les callouts (`> [!note]`) sont rendus tels quels.
 
-Chaque writeup propose son propre bouton de téléchargement PDF, en haut de sa page.
+Chaque page propose un bouton de téléchargement PDF en haut. Une erreur, une meilleure méthode ? Voir [Contribuer](contributing.md).

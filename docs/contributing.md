@@ -22,7 +22,7 @@ Quelques exemples de contributions utiles sur un writeup existant :
 
 Si tu es arrivé ici en cliquant sur *« Suggérer une amélioration »* depuis un writeup, un bouton vers le fichier exact de ce writeup apparaît juste au-dessus de ce paragraphe.
 
-Sinon, trouve directement le fichier dans [`docs/`](https://github.com/Subnau940/CTF-Test-MkDocs/tree/main/docs) sur GitHub (un dossier par catégorie, un fichier `.md` par challenge).
+Sinon, trouve directement le fichier dans [`docs/`](https://github.com/Subnau940/CTF-Test-MkDocs/tree/main/docs) sur GitHub (`ctf/` pour les writeups, un dossier par catégorie ; `projets/` pour la documentation de projets).
 
 Une fois sur le fichier GitHub :
 
@@ -36,7 +36,7 @@ Ta proposition arrive dans une Pull Request que je relis et fusionne moi-même �
 
 ### 1. Créer le fichier
 
-Dans le dossier de la catégorie concernée (`docs/cryptography/`, `docs/forensic/`, `docs/general-skills/`, `docs/reverse-engineering/`, `docs/web-exploitation/`), crée un fichier `mon-challenge.md` (nom en minuscules, tirets, sans accents).
+Dans le dossier de la catégorie concernée (`docs/ctf/cryptography/`, `docs/ctf/forensic/`, `docs/ctf/general-skills/`, `docs/ctf/reverse-engineering/`, `docs/ctf/web-exploitation/`), crée un fichier `mon-challenge.md` (nom en minuscules, tirets, sans accents).
 
 ### 2. Copier ce squelette
 
@@ -93,7 +93,7 @@ Ouvre `mkdocs.yml` à la racine du repo, et ajoute une ligne dans la section `na
 ```yaml
   - Cryptography:
       - cryptography/index.md
-      - Mon challenge: cryptography/mon-challenge.md   # <- nouvelle ligne
+      - Mon challenge: ctf/cryptography/mon-challenge.md   # <- nouvelle ligne
 ```
 
 ### 4. Prévisualiser en local (optionnel mais conseillé)
