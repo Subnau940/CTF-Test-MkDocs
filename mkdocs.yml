@@ -117,4 +117,5 @@ nav:
       - VLAN, routage inter-VLAN et ACL: formation/vlan-routage-acl.md
       - Haute disponibilité (HSRP, STP, LACP): formation/haute-disponibilite.md
       - Routage dynamique (RIP, OSPF): formation/routage-dynamique.md
+      - MITM (ARP/DNS spoofing): formation/mitm-arp-dns.md
   - Contribuer: contributing.md

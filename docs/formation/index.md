@@ -17,3 +17,11 @@ Tous montés sous Cisco Packet Tracer.
 | [VLAN, routage inter-VLAN et ACL](vlan-routage-acl.md) | Segmentation par métier, router-on-a-stick, routage statique et cloisonnement par ACL | Packet Tracer |
 | [Haute disponibilité (HSRP, STP, LACP)](haute-disponibilite.md) | Passerelle redondée, suppression des boucles, agrégation de liens, le tout validé par des pannes | Packet Tracer |
 | [Routage dynamique (RIP, OSPF)](routage-dynamique.md) | Deux domaines de routage interconnectés par redistribution | Packet Tracer |
+
+## Sécurité réseau
+
+Mené sur une plateforme de lab isolée (machines virtuelles dédiées, aucun réseau réel).
+
+| TP | Sujet | Environnement |
+| :--- | :--- | :--- |
+| [MITM — ARP spoofing et DNS spoofing](mitm-arp-dns.md) | Position de Man-in-the-Middle par empoisonnement ARP, interception HTTP, empoisonnement DNS, puis contre-mesures | Lab isolé |
