@@ -4,7 +4,7 @@ title: Accueil
 
 # Base de connaissances
 
-Mes notes de cybersécurité, rédigées au fil de l'apprentissage et tenues à jour : les writeups de CTF que je résous et la documentation de mes projets perso (IA, lab). Pour chaque sujet, je garde le *pourquoi* autant que le *comment* : la faille, la méthode, les erreurs, les fausses pistes.
+Mes notes de cybersécurité, rédigées au fil de l'apprentissage et tenues à jour : les writeups de CTF que je résous et la documentation de mes projets perso (IA, lab) et mes travaux pratiques de formation (réseau). Pour chaque sujet, je garde le *pourquoi* autant que le *comment* : la faille, la méthode, les erreurs, les fausses pistes.
 
 <div class="grid cards" markdown>
 
@@ -20,9 +20,17 @@ Mes notes de cybersécurité, rédigées au fil de l'apprentissage et tenues à 
 
     ---
 
-    Documentation complète de mes projets : choix, bugs, remises en question et résultats.
+    Mes projets perso, documentés : choix, bugs, remises en question et résultats.
 
     [:octicons-arrow-right-24: Voir les projets](projets/index.md)
+
+-   :material-lan: **Formation**
+
+    ---
+
+    Les TP réseau du Bachelor (VLAN et ACL, haute disponibilité, routage dynamique), rédigés en comptes rendus.
+
+    [:octicons-arrow-right-24: Voir les TP](formation/index.md)
 
 </div>
 

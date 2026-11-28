@@ -112,9 +112,9 @@ nav:
   - Projets:
       - projets/index.md
       - IA Heretic locale (pentest): projets/ia-heretic.md
-      - Réseau & infrastructure:
-          - projets/reseau/index.md
-          - VLAN, routage inter-VLAN et ACL: projets/reseau/vlan-routage-acl.md
-          - Haute disponibilité (HSRP, STP, LACP): projets/reseau/haute-disponibilite.md
-          - Routage dynamique (RIP, OSPF): projets/reseau/routage-dynamique.md
+  - Formation:
+      - formation/index.md
+      - VLAN, routage inter-VLAN et ACL: formation/vlan-routage-acl.md
+      - Haute disponibilité (HSRP, STP, LACP): formation/haute-disponibilite.md
+      - Routage dynamique (RIP, OSPF): formation/routage-dynamique.md
   - Contribuer: contributing.md
