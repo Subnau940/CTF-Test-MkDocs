@@ -22,7 +22,7 @@ Quelques exemples de contributions utiles sur un writeup existant :
 
 Si tu es arrivé ici en cliquant sur *« Suggérer une amélioration »* depuis un writeup, un bouton vers le fichier exact de ce writeup apparaît juste au-dessus de ce paragraphe.
 
-Sinon, trouve directement le fichier dans [`docs/`](https://github.com/Subnau940/CTF-Test-MkDocs/tree/main/docs) sur GitHub (`ctf/` pour les writeups, un dossier par catégorie ; `projets/` pour la documentation de projets).
+Sinon, trouve directement le fichier dans [`docs/`](https://github.com/Subnau940/CTF-Test-MkDocs/tree/main/docs) sur GitHub (`ctf/` pour les writeups, un dossier par catégorie ; `projets/` pour les projets perso, `formation/` pour les TP du Bachelor).
 
 Une fois sur le fichier GitHub :
 
